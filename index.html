@@ -3,227 +3,261 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Construcciones Florin AF | Excelencia en Construcción y Piedra</title>
-    
+    <title>Construcciones Florin AF | Excelencia y Maestría en Construcción</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     
     <style>
         :root { 
-            --rojo: #e31e24; 
-            --azul: #1a2a6c; /* Azul más profundo y elegante */
-            --oscuro: #0f0f0f; 
-            --blanco: #ffffff;
-            --gris-suave: #f4f7f6;
-            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+            --rojo: #e31e24; --azul: #1a2a6c; --oscuro: #0a0a0a; --blanco: #ffffff;
+            --gris-suave: #f8f9fa; --shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; scroll-behavior: smooth; background-color: var(--gris-suave); }
+        body { font-family: 'Poppins', sans-serif; color: #333; line-height: 1.6; scroll-behavior: smooth; background-color: var(--blanco); }
         h1, h2, h3 { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- NAVEGACIÓN PREMIUM --- */
+        /* --- NAVEGACIÓN FORMAL --- */
         nav { 
-            background: rgba(255, 255, 255, 0.95); 
-            padding: 10px 8%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: var(--shadow); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000;
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98); padding: 12px 8%; 
+            display: flex; justify-content: space-between; align-items: center; 
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000;
         }
-        .brand-container { display: flex; align-items: center; text-decoration: none; }
-        .logo-nav { height: 60px; width: auto; transition: transform 0.3s; border-radius: 8px; }
-        .logo-nav:hover { transform: scale(1.05); }
-        .logo-text { color: var(--azul); font-size: 1.6rem; font-weight: 700; margin-left: 15px; border-left: 2px solid var(--rojo); padding-left: 15px; }
-        .logo-text span { color: var(--rojo); display: block; font-size: 0.8rem; letter-spacing: 3px; }
+        .brand { display: flex; align-items: center; text-decoration: none; }
+        .logo-nav { height: 60px; margin-right: 15px; border-radius: 5px; }
+        .brand-text h2 { color: var(--azul); font-size: 1.6rem; line-height: 1; border-left: 3px solid var(--rojo); padding-left: 15px; }
+        .brand-text span { color: var(--rojo); font-size: 0.8rem; font-weight: 600; letter-spacing: 2px; display: block; }
 
-        nav ul { display: flex; list-style: none; }
-        nav ul li { margin-left: 30px; }
-        nav ul li a { text-decoration: none; color: var(--oscuro); font-weight: 600; font-size: 0.85rem; transition: 0.3s; position: relative; }
-        nav ul li a::after { content: ''; width: 0; height: 2px; background: var(--rojo); position: absolute; bottom: -5px; left: 0; transition: 0.3s; }
-        nav ul li a:hover::after { width: 100%; }
-
-        /* --- HERO DINÁMICO --- */
+        /* --- HERO --- */
         .hero { 
-            height: 90vh; 
-            background: linear-gradient(rgba(15, 26, 60, 0.7), rgba(15, 26, 60, 0.7)), url('imagenes/balcon.jpeg'); 
-            background-size: cover; 
-            background-position: center; 
-            background-attachment: fixed; /* Efecto Parallax */
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
-            align-items: center; 
-            color: white; 
-            text-align: center; 
-            padding: 0 20px; 
+            height: 85vh; background: linear-gradient(rgba(10, 20, 50, 0.7), rgba(10, 20, 50, 0.7)), url('imagenes/general/fach.jpeg'); 
+            background-size: cover; background-position: center; background-attachment: fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; 
         }
-        .hero h1 { font-size: 5rem; line-height: 1; margin-bottom: 20px; animation: fadeInUp 1s; }
-        .hero p { font-size: 1.4rem; font-weight: 300; max-width: 800px; animation: fadeInUp 1.2s; }
+        .hero h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin-bottom: 20px; }
+        .hero p { font-size: 1.4rem; max-width: 850px; font-weight: 300; margin-bottom: 35px; }
 
-        /* --- SECCIÓN ESPECIALIDAD --- */
-        .especialidad { padding: 100px 10%; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
-        .info-casa h2 { color: var(--azul); font-size: 3rem; margin-bottom: 25px; position: relative; }
-        .info-casa h2::before { content: ''; width: 60px; height: 5px; background: var(--rojo); position: absolute; top: -15px; left: 0; }
-        .foto-casa { position: relative; border-radius: 20px; overflow: hidden; box-shadow: 20px 20px 60px rgba(0,0,0,0.15); }
-        .foto-casa img { width: 100%; transition: 0.6s ease; }
-        .foto-casa:hover img { transform: scale(1.1); }
-
-        /* --- BANNER SEGURIDAD --- */
-        .seguridad { 
-            background: var(--azul); 
-            padding: 60px 10%; 
-            color: white; 
-            text-align: center;
-            clip-path: polygon(0 15%, 100% 0, 100% 85%, 0 100%); /* Corte moderno */
-            margin: 40px 0;
-        }
-        .seguridad-box h3 { font-size: 2.2rem; color: var(--rojo); }
-
-        /* --- TARJETAS DE SERVICIOS --- */
-        .servicios { padding: 100px 10%; text-align: center; }
-        .servicios h2 { font-size: 3rem; color: var(--azul); margin-bottom: 50px; }
-        .servicios-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        /* --- SECCIÓN GALERÍA PROFESIONAL --- */
+        .section-galeria { padding: 80px 8%; background: var(--gris-suave); }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 3rem; color: var(--azul); position: relative; }
+        .section-title::after { content: ''; width: 80px; height: 4px; background: var(--rojo); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
         
-        .s-item { 
-            background: var(--blanco); 
-            border-radius: 15px; 
-            overflow: hidden; 
-            box-shadow: var(--shadow); 
-            transition: 0.4s; 
-            border: 1px solid rgba(0,0,0,0.05);
+        .filtros { margin-bottom: 40px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+        .filter-btn { 
+            padding: 12px 25px; border: 2px solid var(--azul); background: transparent; color: var(--azul); 
+            font-family: 'Oswald'; cursor: pointer; border-radius: 4px; transition: 0.3s; font-weight: 600; text-transform: uppercase;
         }
-        .s-item:hover { transform: translateY(-15px); }
-        .s-img { width: 100%; height: 250px; object-fit: cover; transition: 0.5s; }
-        .s-content { padding: 30px; text-align: left; }
-        .s-content h3 { font-size: 1.5rem; color: var(--azul); margin-bottom: 10px; border-bottom: 2px solid var(--gris-suave); padding-bottom: 10px; }
-        .s-content p { font-size: 0.9rem; color: #666; }
+        .filter-btn.active, .filter-btn:hover { background: var(--azul); color: white; }
 
-        /* --- FOOTER MODERNO --- */
-        footer { 
-            background: var(--oscuro); 
-            color: white; 
-            padding: 80px 10%; 
-            display: grid; 
-            grid-template-columns: 1.5fr 1fr; 
-            gap: 100px;
-            border-top: 5px solid var(--rojo);
+        .grid-galeria { 
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+            grid-auto-rows: 280px; gap: 20px; 
         }
-        .logo-footer { height: 100px; margin-bottom: 20px; filter: grayscale(1) invert(1); }
-        .contact-info p { margin-bottom: 15px; display: flex; align-items: center; font-size: 1.1rem; }
-        
-        .btn-contacto { 
-            display: inline-block; 
-            padding: 18px 40px; 
-            background: var(--rojo); 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 50px; 
-            font-weight: 700; 
-            transition: 0.3s; 
-            box-shadow: 0 5px 20px rgba(227, 30, 36, 0.4);
-        }
-        .btn-contacto:hover { transform: scale(1.05); background: #c21a1f; box-shadow: 0 8px 25px rgba(227, 30, 36, 0.6); }
+        .item-galeria { position: relative; overflow: hidden; border-radius: 4px; display: none; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .item-galeria.show { display: block; animation: fadeInUp 0.6s ease forwards; }
+        .item-galeria img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
+        .item-galeria:hover img { transform: scale(1.1); filter: brightness(0.7); }
 
-        /* Animaciones */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* --- LIGHTBOX MODERNO --- */
+        .lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+            background: rgba(0,0,0,0.98); display: none; justify-content: center; 
+            align-items: center; z-index: 2000;
         }
+        .lightbox-img { max-width: 90%; max-height: 85%; border: 4px solid var(--blanco); box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+        .close-btn { position: absolute; top: 30px; right: 40px; color: white; font-size: 60px; cursor: pointer; font-weight: 300; }
+        .nav-btn { position: absolute; top: 50%; color: white; font-size: 60px; cursor: pointer; padding: 20px; user-select: none; transition: 0.3s; }
+        .nav-btn:hover { color: var(--rojo); }
+        .prev { left: 20px; } .next { right: 20px; }
 
-        @media (max-width: 900px) {
-            .hero h1 { font-size: 3rem; }
-            .especialidad { grid-template-columns: 1fr; }
-            footer { grid-template-columns: 1fr; gap: 50px; }
-            nav { padding: 15px 5%; }
-            nav ul { display: none; } /* Podrías añadir un menú hamburguesa aquí */
-        }
+        /* --- INFO EMPRESA --- */
+        .seguridad { background: var(--azul); color: white; padding: 70px 10%; text-align: center; }
+        .seguridad h3 { font-size: 2.5rem; color: var(--rojo); margin-bottom: 15px; }
+
+        footer { background: var(--oscuro); color: white; padding: 80px 8%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 60px; border-top: 8px solid var(--rojo); }
+        .btn-wa { display: inline-block; padding: 18px 45px; background: var(--rojo); color: white; text-decoration: none; border-radius: 5px; font-weight: 700; transition: 0.3s; text-transform: uppercase; }
+        .btn-wa:hover { background: #c21a1f; transform: translateY(-3px); }
+
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="#inicio" class="brand-container">
-            <img src="imagenes/logo_empresa.jpg" alt="Logo Construcciones Florin AF" class="logo-nav">
-            <div class="logo-text">FLORIN AF <span>CONSTRUCCIONES</span></div>
+        <a href="#" class="brand">
+            <img src="imagenes/logo_empresa.jpg" alt="Florin AF" class="logo-nav">
+            <div class="brand-text"><h2>FLORIN AF</h2><span>CONSTRUCCIONES</span></div>
         </a>
-        <ul>
-            <li><a href="#inicio">PROYECTOS</a></li>
-            <li><a href="#especialidad">ESPECIALIDAD</a></li>
-            <li><a href="#servicios">SERVICIOS</a></li>
-            <li><a href="#contacto">CONTACTO</a></li>
-        </ul>
+        <a href="https://wa.me/34690767801" class="btn-wa" style="padding: 12px 30px; font-size: 0.85rem;">PRESUPUESTO SIN COMPROMISO</a>
     </nav>
 
-    <section id="inicio" class="hero">
+    <section class="hero">
         <h1>MAESTRÍA EN CADA OBRA</h1>
-        <p>Construyendo el futuro de Guadalajara con la solidez y el respeto por la piedra tradicional. Calidad garantizada en cada detalle.</p>
-        <a href="#contacto" class="btn-contacto">SOLICITAR CONSULTA TÉCNICA</a>
+        <p>Expertos en rehabilitación rural, obra nueva y acabados de alta gama en la provincia de Guadalajara.</p>
+        <a href="#galeria" class="btn-wa">EXPLORAR PORTAFOLIO</a>
     </section>
 
-    <section id="especialidad" class="especialidad">
-        <div class="info-casa">
-            <h2>ARTE EN PIEDRA RURAL</h2>
-            <p>Fusionamos la robustez de la construcción clásica con la eficiencia moderna. Cada proyecto en la provincia de Guadalajara es una pieza única diseñada para perdurar generaciones.</p>
+
+
+    <section id="galeria" class="section-galeria">
+        <h2 class="section-title">Nuestra Galería de Trabajos</h2>
+        
+        <div class="filtros">
+            <button class="filter-btn active" onclick="filterSelection('general')">GENERAL</button>
+            <button class="filter-btn" onclick="filterSelection('baños')">BAÑOS</button>
+            <button class="filter-btn" onclick="filterSelection('interiores')">INTERIORES</button>
+            <button class="filter-btn" onclick="filterSelection('exteriores')">EXTERIORES</button>
+            <button class="filter-btn" onclick="filterSelection('tejados')">TEJADOS</button>
+            <button class="filter-btn" onclick="filterSelection('suelo-radiante')">SUELO RADIANTE</button>
         </div>
-        <div class="foto-casa">
-            <img src="imagenes/casaLaranueva.jpeg" alt="Detalle constructivo en piedra">
+
+        <div class="grid-galeria">
+            <div class="item-galeria general show"><img src="imagenes/general/balcon.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/cim.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/cim2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/horm.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/hornLeñ.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/horno.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/plas.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/plas2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/suel.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/suel2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/suel3.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/suel4.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/suel5.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/telescop.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/ven.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/ven2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria general show"><img src="imagenes/general/ven3.jpeg" onclick="openLightbox(this)"></div>
+
+            <div class="item-galeria baños"><img src="imagenes/baños/1.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria baños"><img src="imagenes/baños/2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria baños"><img src="imagenes/baños/3.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria baños"><img src="imagenes/baños/4.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria baños"><img src="imagenes/baños/5.jpeg" onclick="openLightbox(this)"></div>
+
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/1.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/3.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/4.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/5.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/6.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/7.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/8.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/9.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/10.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/11.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria exteriores"><img src="imagenes/exteriores/12.jpeg" onclick="openLightbox(this)"></div>
+
+            <div class="item-galeria tejados"><img src="imagenes/tejados/1.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria tejados"><img src="imagenes/tejados/2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria tejados"><img src="imagenes/tejados/3.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria tejados"><img src="imagenes/tejados/4.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria tejados"><img src="imagenes/tejados/5.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria tejados"><img src="imagenes/tejados/6.jpeg" onclick="openLightbox(this)"></div>
+
+            <div class="item-galeria suelo-radiante"><img src="imagenes/suelo-radiante/1.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria suelo-radiante"><img src="imagenes/suelo-radiante/2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria suelo-radiante"><img src="imagenes/suelo-radiante/3.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria suelo-radiante"><img src="imagenes/suelo-radiante/4.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria suelo-radiante"><img src="imagenes/suelo-radiante/5.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria suelo-radiante"><img src="imagenes/suelo-radiante/6.jpeg" onclick="openLightbox(this)"></div>
+
+            <div class="item-galeria interiores"><img src="imagenes/interiores/1.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/2.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/3.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/4.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/5.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/6.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/7.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/8.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/9.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/10.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/11.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/12.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/13.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/14.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/15.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/16.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/20.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/21.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/22.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/23.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/24.jpeg" onclick="openLightbox(this)"></div>
+            <div class="item-galeria interiores"><img src="imagenes/interiores/25.jpeg" onclick="openLightbox(this)"></div>
         </div>
     </section>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <span class="nav-btn prev" onclick="changeImage(-1)">&#10094;</span>
+        <img id="lightbox-img" class="lightbox-img" src="">
+        <span class="nav-btn next" onclick="changeImage(1)">&#10095;</span>
+    </div>
 
     <section class="seguridad">
-        <div class="seguridad-box">
-            <h3>MÁXIMA SEGURIDAD LABORAL</h3>
-            <p>Cumplimos con los estándares más exigentes de salud laboral para proteger lo más importante: las personas.</p>
-        </div>
-    </section>
-
-    <section id="servicios" class="servicios">
-        <h2>SERVICIOS ESPECIALIZADOS</h2>
-        <div class="servicios-grid">
-            <div class="s-item">
-                <img src="imagenes/tejado.jpeg" alt="Tejados Profesionales" class="s-img">
-                <div class="s-content">
-                    <h3>TEJADOS Y CUBIERTAS</h3>
-                    <p>Ingeniería de tejados adaptada al rigor climático de la Alcarria y la Sierra.</p>
-                </div>
-            </div>
-            <div class="s-item">
-                <img src="imagenes/hormigonImpreso1.jpeg" alt="Reformas de lujo" class="s-img">
-                <div class="s-content">
-                    <h3>REFORMAS</h3>
-                    <p>Transformación de espacios rurales respetando la arquitectura original.</p>
-                </div>
-            </div>
-            <div class="s-item">
-                <img src="imagenes/Laranueva.jpeg" alt="Obra nueva" class="s-img">
-                <div class="s-content">
-                    <h3>OBRA NUEVA</h3>
-                    <p>Proyectos llave en mano con acabados de alta gama</p>
-                </div>
-            </div>
-        </div>
+        <h3>PROFESIONALIDAD Y RIGOR</h3>
+        <p>"Nuestra empresa de construcción cumple con la normativa vigente en materia de seguridad y salud laboral, garantizando un entorno de trabajo seguro y saludable para nuestros empleados y clientes.</p>
     </section>
 
     <footer id="contacto">
         <div>
-            <img src="imagenes/logo_empresa.jpg" alt="Logo" class="logo-footer">
-            <h3>CONSTRUCCIONES FLORIN AF</h3>
-            <p>Líderes en rehabilitación rural y construcción civil en Guadalajara. Un compromiso inquebrantable con la calidad.</p>
+            <h3 style="color: var(--rojo); margin-bottom: 15px;">CONSTRUCCIONES FLORIN AF</h3>
+            <p>Compromiso, seriedad y una ejecución impecable en cada metro cuadrado.</p>
+            <p style="margin-top: 20px;">📍 Guadalajara y Provincia, España</p>
         </div>
-        <div class="contact-info">
-            <h3>CONTACTO DIRECTO</h3>
-            <p>📍 Guadalajara, España</p>
+        <div>
+            <h3 style="margin-bottom: 15px;">CONSULTAS TÉCNICAS</h3>
             <p>📞 690 76 78 01</p>
             <p>✉️ neculauflorin76@gmail.com</p>
-            <a href="https://wa.me/34690767801" class="btn-contacto">INICIAR PROYECTO</a>
+            <a href="https://wa.me/34690767801" class="btn-wa" style="margin-top: 25px;">CONTACTAR POR WHATSAPP</a>
         </div>
     </footer>
 
+    <script>
+        // FILTROS
+        function filterSelection(c) {
+            var x = document.getElementsByClassName("item-galeria");
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("show");
+                if (x[i].classList.contains(c)) x[i].classList.add("show");
+            }
+            var btns = document.getElementsByClassName("filter-btn");
+            for (var i = 0; i < btns.length; i++) { btns[i].classList.remove("active"); }
+            event.currentTarget.classList.add("active");
+        }
+
+        // VISOR
+        let currentImgIndex = 0;
+        const images = [];
+
+        function openLightbox(imgElement) {
+            const visibleItems = document.querySelectorAll(".item-galeria.show img");
+            images.length = 0;
+            visibleItems.forEach((img, index) => {
+                images.push(img.src);
+                if(img.src === imgElement.src) currentImgIndex = index;
+            });
+            document.getElementById("lightbox-img").src = imgElement.src;
+            document.getElementById("lightbox").style.display = "flex";
+            document.body.style.overflow = "hidden"; // Bloquear scroll
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function changeImage(dir) {
+            currentImgIndex = (currentImgIndex + dir + images.length) % images.length;
+            document.getElementById("lightbox-img").src = images[currentImgIndex];
+        }
+
+        // Cerrar con tecla Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") closeLightbox();
+            if (e.key === "ArrowLeft") changeImage(-1);
+            if (e.key === "ArrowRight") changeImage(1);
+        });
+    </script>
 </body>
 </html>
-
